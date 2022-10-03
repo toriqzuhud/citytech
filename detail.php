@@ -84,7 +84,7 @@
                 <h2 class="fw-bolder mb-4">Other products</h2>
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
-                    <?php $test=$koneksi->query("SELECT * FROM produk LIMIT 4"); ?>
+                    <?php $test=$koneksi->query("SELECT * FROM produk ORDER BY rand() LIMIT 4"); ?>
                     <?php while($perproduk = $test->fetch_assoc()){ ?>
                     <div class="col mb-5">
                         <div class="card h-100">
@@ -122,7 +122,7 @@
         
         <!-- Footer-->
         <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy;<strong>City Tech</strong></a> 2022</p></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

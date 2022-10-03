@@ -3,13 +3,17 @@
     include 'koneksi.php';
 
 
+
+
 // jika tidak ada session lari ke login.php
     if (!isset($_SESSION["pelanggan"])) {
         echo "<script>location='login.php';</script>";
-    }
+            }
 
-
-    
+    if (empty($_SESSION['keranjang']) OR !isset($_SESSION['keranjang'])) {
+            echo "<script> alert(' checkout Kosong ');</script>";
+            echo "<script>location='index.php';</script>";
+  }
 
  ?>
 
@@ -60,11 +64,11 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <address>
-                                            <strong>Billed To:</strong><br>
-                                            Twitter, Inc.<br>
-                                            795 Folsom Ave, Suite 600<br>
-                                            San Francisco, CA 94107<br>
-                                            <abbr title="Phone">P:</abbr> (123) 456-7890
+                                            <strong>Dirikim Dari</strong><br>
+                                            CITY TECH<br>
+                                            Kec. Taktakan, Kota. Serang<br>
+                                            Jl. Raya Cilegon No.Km. 5, Taman, Drangong<br>
+                                            <abbr title="Phone">P :</abbr> +62-853-5283-0499
                                         </address>
                                     </div>
 
@@ -73,7 +77,7 @@
                                             <strong>Data dan Alamat Customer :</strong><br>
                                             <?php echo $_SESSION['pelanggan']['nama_pelanggan'] ?><br>
                                             <?php echo $_SESSION['pelanggan']['telepon_pelanggan'] ?><br>
-                                            <textarea class="form-control" name="alamat_pengiriman" placeholder=" Alamat Pengiriman : Nama_Kota, Nama_Kecamatan, Nama_Desa, Alamat Lengkap, Kode POS "></textarea>
+                                            <textarea class="form-control" name="alamat_pengiriman" placeholder=" Alamat Pengiriman : Nama_Kota, Nama_Kecamatan, Nama_Desa, Alamat Lengkap, Kode POS "><?= $_SESSION['pelanggan']['alamat_pelanggan']; ?></textarea>
                                             
                                         </address>
                                     </div>
@@ -81,9 +85,8 @@
                                 <div class="row">
                                     <div class="col-sm-9">
                                         <address>
-                                            <strong>Payment Method:</strong><br>
-                                            Visa ending **** 1234<br>
-                                            h.elaine@gmail.com<br>
+                                            <strong>Metode Pembayaran :</strong><br>
+                                            Bank <strong> BRI 4847-0101-4320-505 </strong> AN. <strong> TORIQ ZUHUD NURCAHYO </strong>
                                         </address>
                                     </div>
                                     <div class="col-sm-3 text-right">

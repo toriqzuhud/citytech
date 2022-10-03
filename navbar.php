@@ -33,7 +33,8 @@
                       <li class="nav-item"><a class="nav-link active" aria-current="page" href="daftar.php">Daftar</a></li>
                     <?php endif ?>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="./index.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="checkout.php">Checkout</a></li>
+                        <li class="nav-item"><a class="nav-link" href="riwayat.php">Riwayat Belanja</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kategori</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -46,6 +47,7 @@
 
                         </li>
                     </ul>
+                    
                     <form class="d-flex" action="keranjang.php">
                         <button class="btn btn-outline-dark" type="submit">
                            <i class="bi-cart-fill me-1"> Cart </i>

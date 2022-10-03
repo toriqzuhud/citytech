@@ -97,10 +97,7 @@
               $_SESSION['nomor'] = $nomor;
               $notif = $_SESSION['nomor'];
              ?>
-
-
-
-
+             
             <!-- <div class="card mb-4">
               <div class="card-body p-4 d-flex flex-row">
                 <div class="form-outline flex-fill">

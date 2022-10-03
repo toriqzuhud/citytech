@@ -67,9 +67,6 @@
 
               </form>
 
-              <pre>
-                 <?php print_r($_POST) ?>
-               </pre>
               <?php 
                 if (isset($_POST["regis"]))
                 {
@@ -77,7 +74,7 @@
                 $nama = $_POST["nama"];
                 $email = $_POST["email"];
                 $password = $_POST["password"];
-                $alamat = $_POST["telepon"];
+                $alamat = $_POST["alamat"];
                 $telepon = $_POST["telepon"];
 
                 // cek email
@@ -85,16 +82,9 @@
                 $yangcocok = $ambil->num_rows;
 
                 if ($yangcocok==1) {
-                  // echo "<script>swal.fire('Pendaftaran GAGAL',' EMAIL sudah Digunakan',' OK');</script>";
-                  // echo "<script>swal.fire('Pendaftaran Gagal','danger');</script>";
 
-                  echo "<script>";
-                  echo "Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Something went wrong!',
-                        })" ;
-                  echo "</script>";
+                  echo "<script>alert('Pendaftaran Gagal, Email Telah Digunakan');</script>";
+                  
                   echo "<script>location='daftar.php';</script>";
 
 
@@ -107,7 +97,7 @@
                       '$telepon',
                       '$alamat')");
 
-                  echo "<script>swal.fire('Pendaftaran Berhasil','success');</script>";
+                  echo "<script>alert('Pendaftaran Berhasil');</script>";
                   echo "<script>location='login.php';</script>";
 
 

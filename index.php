@@ -12,9 +12,6 @@
         <title>City Tech</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="logo/logo.png" />
-        <!-- Bootstrap icons-->
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" /> -->
-        <!-- Core theme CSS (includes Bootstrap)-->
         <link href="admin/dist/css/adminlte.css" rel="stylesheet" />
         <link href="admin/dist/css/detail.css" rel="stylesheet" />
 
@@ -29,7 +26,7 @@
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
                     <h1 class="display-4 fw-bolder">City Tech</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+                    <p class="lead fw-normal text-white-50 mb-0">Your Technology Partner</p>
                 </div>
             </div>
         </header>
@@ -59,7 +56,7 @@
         </section>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; <a href="index.php"><strong>City Tech</strong></a> 2022</p></div>
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy;<strong>City Tech</strong></a> 2022</p></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

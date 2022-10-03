@@ -6,6 +6,19 @@
 
 
  ?>
+  <?php
+            // mendapatkan id_pelanggan yang beli
+            $idpelangganbeli = $detail['id_pelanggan'];
+            // mendapatkan id_pelanggan yang login
+            $idpelangganlogin = $_SESSION['pelanggan']['id_pelanggan'];
+
+            if ($idpelangganbeli !== $idpelangganlogin) {
+                echo "<script>alert('Anda tidak berhak mengakses data orang lain!!!')</script>";
+                echo "<script>location='riwayat.php';</script>";
+                exit();
+            }
+
+            ?>
 
  <!DOCTYPE html>
  <html>
@@ -23,11 +36,12 @@
  	<title>Invoice</title>
  </head>
  <body>
+
+    <!-- <pre><?php echo print_r($detail); ?></pre> -->
+    <!-- <pre><?php print_r($_SESSION["pelanggan"]); ?></pre> -->
  	  <!-- Navigation-->
         <?php include 'navbar.php'; ?>
-        <!-- <pre>
-        	<?php print_r($_SESSION["pelanggan"]); ?>
-        </pre> -->
+        
         <br>
         <div class="container">
                 <div class="row">
@@ -38,7 +52,7 @@
                                 <div class="invoice-title">
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <img src="foto_produk/g2671.png" alt="" height="35">
+                                            <img src="logo/logo.png" alt="" height="35">
                                             <strong>CITY TECH</strong>
                                         </div>
                                     </div>
@@ -55,9 +69,9 @@
                                         <address>
                                             <strong>Dirikim Dari</strong><br>
                                             CITY TECH<br>
-                                            Kec. Kragilan, Kab. Serang<br>
-                                            Perum Graha Cisait B1 NO 6<br>
-                                            <abbr title="Phone">P:</abbr> +62-853-5283-0499
+                                            Kec. Taktakan, Kota. Serang<br>
+                                            Jl. Raya Cilegon No.Km. 5, Taman, Drangong<br>
+                                            <abbr title="Phone">P :</abbr> +62-853-5283-0499
                                         </address>
                                     </div>
                                     <div class="col-sm-6 text-right">
@@ -110,27 +124,28 @@
                                             <tbody>
                                                 <?php $nomor=1; ?>
 												<?php $ambil=$koneksi->query("SELECT * FROM pembelian_produk WHERE id_pembelian='$_GET[id]'"); ?>
+
+                                                
+
 												<?php while($pecah=$ambil->fetch_assoc()){ ?>
                                                 <tr>
                                                     <td><?php echo $nomor; ?></td>
                                                     <td><strong><?php echo $pecah['nama']; ?></strong></td>
                                                     <td class="text-center">RP. <?php echo number_format($pecah["harga"]); ?></td>
                                                     <td class="text-center"><?php echo $pecah['jumlah'];?></td>
-                                                    <td class="text-right">RP. <?php echo number_format($pecah['subharga']*$pecah['jumlah']) ?></td>
+                                                    <td class="text-right">RP. <?php echo number_format($pecah['subharga']) ?></td>
                                                 </tr>
                                                 <?php $nomor++; ?>
 												<?php }; ?>
+
                                             </tbody>
                                             <tfoot >
                                                 <tr>
                                                     <th colspan="4">Total Pembelian</th>
                                                     <th class="text-right">Rp. <?php echo number_format($detail['total_pembelian']); ?></th>
                                                 </tr>
-                                                <tr>
-                                                    <th colspan="4"></th>
-                                                    <th class="text-right"><button class="btn btn-primary" name="checkout">Chekout</button></th>
-                                                </tr>
                                             </tfoot>
+
                                         </table>
                                     </div>                      
                                 </div>
